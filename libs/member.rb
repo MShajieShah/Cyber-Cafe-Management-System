@@ -13,7 +13,7 @@ class Member
     ifile = File.open("data/memberdata")
     data = ifile.readlines
     ifile.close
-    data.insert(1, "Name :", @name, "  ", "Address:", @address, " ", "Phone No:", @phno, " ", "Email:", @email, " ", "role:", @role, "\n")
+    data.insert(1, "Name :", @name, "  ", "Address:", @address, " ", "Phone No:", @phno, " ", "Email:", @email, " ", "role:", @role, " ", "subscription_date: ",(Time.now).strftime("%d"),"\n")
     File.write("data/memberdata", data.join, mode: "w")
   end
 
