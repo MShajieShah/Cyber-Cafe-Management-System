@@ -29,6 +29,7 @@ class Computer
     read_file.each_line do |line|
       write_file.write(line) unless line.include? prev_name
     end
+    write_file.close
   end
 
   def self.delete_member(del_name)
@@ -38,6 +39,7 @@ class Computer
     read_file.each_line do |line|
       write_file.write(line) unless line.include? del_name
     end
+    write_file.close
   end
 
   def self.search_member(search_name)
