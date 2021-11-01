@@ -6,7 +6,7 @@ class Computer
     @gene = gene
   end
 
-  def save_member()
+  def save_member
     ifile = File.open("data/computerdata")
     data = ifile.readlines
     ifile.close
@@ -14,7 +14,7 @@ class Computer
     File.write("data/computerdata", data.join, mode: "w")
   end
 
-  def self.show_member()
+  def self.show_member
     File.foreach("data/computerdata") { |line| puts line }
   end
 

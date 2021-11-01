@@ -3,7 +3,7 @@ class Charge
     total = (end_time).to_i - (start_time).to_i
     result = ""
     if total < 10
-      result = " Rupees 50/- you have to pay"
+      result = "Rupees 50/- you have to pay"
     elsif total > 10
       result = " You have to pay", total + 5
     end

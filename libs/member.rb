@@ -9,15 +9,16 @@ class Member
     @role = role
   end
 
-  def save_member()
+  def save_member
     ifile = File.open("data/memberdata")
     data = ifile.readlines
     ifile.close
     data.insert(1, "Name :", @name, "  ", "Address:", @address, " ", "Phone No:", @phno, " ", "Email:", @email, " ", "role:", @role, " ", "subscription_date: ", (Time.now).strftime("%d"), "\n")
     File.write("data/memberdata", data.join, mode: "w")
+    puts "Record Added Sucessfully"
   end
 
-  def self.show_member()
+  def self.show_member
     File.foreach("data/memberdata") { |line| puts line }
   end
 
